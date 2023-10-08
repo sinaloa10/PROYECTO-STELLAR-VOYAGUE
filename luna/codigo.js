@@ -52,6 +52,8 @@ scene.add(lightHelper)
 Array(200).fill().forEach(addStar);*/
 
 // Background
+
+// Función para crear estrellas (partículas)
 function createStars() {
   const starsGeometry = new THREE.BufferGeometry();
   const starsVertices = [];
@@ -83,7 +85,7 @@ createStars();
 
 // Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('../images/mercurio.jpg');
+const jeffTexture = new THREE.TextureLoader().load('../images/moon.jpg');
 
 const jeff = new THREE.Mesh(new THREE.SphereGeometry(2, 40, 20), new THREE.MeshStandardMaterial({ map: jeffTexture }));
 jeff.castShadow = true;
