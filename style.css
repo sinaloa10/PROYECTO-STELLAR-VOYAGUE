@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('fondo.png');
+  background-size: cover; /* Para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Para evitar que la imagen se repita */
+  color: white;
+  font-family: "Calibri", sans-serif;
+}
+
+h1{
+  font-size: 500%;
+}
+
+.container {
+  text-align: center;
+}
+
+.fade-in-text {
+  opacity: 0;
+  animation: fadeIn 6s forwards; /* Fade in durante 5 segundos */
+}
+
+.click-text {
+  font-size: 18px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 6s forwards; /* Fade in durante 5 segundos */
+  animation-delay: 2500ms;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 50%, 100% {
+      opacity: 1;
+  }
+  25%, 75% {
+      opacity: 0;
+  }
+}
