@@ -5,5 +5,5 @@ document.addEventListener("DOMContentLoaded", function() {
     title.style.color = "white";
     document.getElementById("body").addEventListener("click", function() {
       document.location.href = ("menu.html",true);
-  });
+  });//hola
 });
