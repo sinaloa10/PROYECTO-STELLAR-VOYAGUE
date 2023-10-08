@@ -12,9 +12,12 @@
       <h1 class="fade-in-text">Stellar Voyage</h1>
       <a href="menu/menu.html" class="btn">Start the aventure</a>
     </div>
-    <div class="background">
-      <audio autoplay src="/audio/strack def.wav" >
-      </audio>
+    <div class="background"></div>
+    <div class="audio-control">
+      <button id="toggleButton" class="audio-control-button">
+        <span class="icon">🔊</span>
+      </button>
+      <audio id="audio" class="fade-out" src="/audio/strack def.wav"></audio>
     </div>
     <script type="importmap">
       {
