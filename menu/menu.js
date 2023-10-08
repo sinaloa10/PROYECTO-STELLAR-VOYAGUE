@@ -100,6 +100,13 @@ function onMouseMove(event) {
 // Agrega el event listener al documento para el evento 'mousemove'
 document.addEventListener('mousemove', onMouseMove, false);
 
+const enlaces = [
+    '../luna/plantilla.html', // Enlace para el primer planeta
+    '../luna/plantilla.html', // Enlace para el segundo planeta
+    '../marte/marte.html', // Enlace para el tercer planeta
+    '../mercurio/mercurio.html',  // Enlace para el cuarto planeta
+    '../venus/venus.html'  // Enlace para el cuarto planeta
+];
 
 // Función para manejar el evento cuando se hace clic en el mouse
 function onMouseClick(event) {
@@ -113,18 +120,38 @@ function onMouseClick(event) {
     // Calcula intersecciones entre el rayo y los objetos en la escena
     const intersects = raycaster.intersectObjects(scene.children);
 
-    // Escala la esfera apuntada por el mouse y redirige a otra página
+    // Escala la esfera apuntada por el mouse y redirige a la página correspondiente
     if (intersects.length > 0) {
         const targetSphere = intersects[0].object;
         targetSphere.scale.set(1.2, 1.2, 1.2); // Escala la esfera a un tamaño más grande
 
-        // Redirige a otra página en la misma ventana
-        window.location.href = '../moon/plantilla.html'; // Reemplaza 'nueva_pagina.html' con la URL de la página a la que deseas redirigir
+        // Obtiene el índice de la esfera en el array de esferas de la escena
+        const index = scene.children.indexOf(targetSphere);
+
+        // Redirige a la página correspondiente al planeta clickeado
+        if (enlaces[index]) {
+            window.location.href = enlaces[index];
+        }
     }
 }
 
 // Agrega el event listener al documento para el evento 'click'
 document.addEventListener('click', onMouseClick, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function animate() {

@@ -76,25 +76,25 @@ button {
 }
 
 /* Estilos para los botones específicos */
-.button1 {
+.p1 {
     position: absolute;
     left: 195px;
     bottom: -300px;
 }
 
-.button2 {
+.p2 {
     position: absolute;
     bottom: -300px;
     left: 545px;
 }
 
-.button3 {
+.p3 {
     position: absolute;
     bottom: -300px;
     left: 880px;
 }
 
-.button4 {
+.p4 {
     position: absolute;
     bottom: -300px;
     left: 1240px;
@@ -104,4 +104,14 @@ button {
 button:hover {
     background-color: #ffffff;
     color:#000000;
+}
+
+/* Estilo para el fondo negro y texto blanco de los párrafos */
+.p1, .p2, .p3, .p4 {
+  background-color: black; /* Fondo negro */
+  color: white; /* Texto blanco */
+  padding: 10px; /* Espaciado interno para los párrafos */
+  margin: 5px 0; /* Espaciado externo para los párrafos */
+  border-radius: 5px; /* Esquinas redondeadas para un aspecto más suave */
+  font-family: Arial, sans-serif; /* Fuente del texto */
 }
