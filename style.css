@@ -5,7 +5,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../images/fondo.png');
+  background-image: url('fondo.png');
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
