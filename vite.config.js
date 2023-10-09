@@ -7,12 +7,12 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       input: {
-        main: 'src/main.js', // Archivo principal de tu aplicación
-        luna: 'src/luna/luna.js', // Archivo JavaScript de la carpeta "luna"
-        marte: 'src/marte/marte.js', // Archivo JavaScript de la carpeta "marte"
-        menu: 'src/menu/menu.js', // Archivo JavaScript de la carpeta "menu"
-        mercurio: 'src/mercurio/mercurio.js', // Archivo JavaScript de la carpeta "mercurio"
-        venus: 'src/venus/venus.js', // Archivo JavaScript de la carpeta "venus"
+        main: 'main.js', // Archivo principal de tu aplicación
+        luna: 'luna/codigo.js', // Archivo JavaScript de la carpeta "luna"
+        marte: 'marte/marte.js', // Archivo JavaScript de la carpeta "marte"
+        menu: 'menu/menu.js', // Archivo JavaScript de la carpeta "menu"
+        mercurio: 'mercurio/mercurio.js', // Archivo JavaScript de la carpeta "mercurio"
+        venus: 'venus/venus.js', // Archivo JavaScript de la carpeta "venus"
       }
     }
   }
