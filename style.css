@@ -76,3 +76,12 @@ h1 {
 .audio-control-button:hover {
   background-color: #555;
 }
+
+.fade-out {
+  transition: volume 1.5s ease; /* Duración y efecto de transición */
+  volume: 1; /* Volumen inicial */
+}
+
+.fade-out.fade-out-active {
+  volume: 0; /* Volumen final (0) */
+}
