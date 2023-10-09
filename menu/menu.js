@@ -40,7 +40,7 @@ function createStars() {
 
 // Esferas
 const textureLoader = new THREE.TextureLoader();
-const sphereTextures = ['../images/moon.jpg', '../images/marte.jpg', '../images/mercurio.jpg', '../images/venus.jpg'];
+const sphereTextures = ['../images/moon.jpg', '../images/marte-min.jpg', '../images/mercurio-min.jpg', '../images/venus-min.jpg'];
 
 const geometry = new THREE.SphereGeometry();
 const sphereMaterials = sphereTextures.map(texturePath => {
