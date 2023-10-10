@@ -1,1 +1,75 @@
-(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))c(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const r of t.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&c(r)}).observe(document,{childList:!0,subtree:!0});function d(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function c(e){if(e.ep)return;e.ep=!0;const t=d(e);fetch(e.href,t)}})();document.addEventListener("DOMContentLoaded",function(){const i=document.getElementById("title");i.style.color="white"});const n=document.getElementById("audio"),s=document.getElementById("toggleButton");s.addEventListener("click",function(){n.paused?(n.play(),s.innerHTML='<span class="icon">🔊</span>'):(n.pause(),s.innerHTML='<span class="icon">🔇</span>')});window.addEventListener("beforeunload",function(){n.classList.add("fade-out-active")});
+(function () {
+    const linkRelList = document.createElement("link").relList;
+  
+    if (linkRelList && linkRelList.supports && linkRelList.supports("modulepreload")) return;
+  
+    for (const link of document.querySelectorAll('link[rel="modulepreload"]')) {
+      preloadModule(link);
+    }
+  
+    new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        if (mutation.type === "childList") {
+          for (const node of mutation.addedNodes) {
+            if (node.tagName === "LINK" && node.rel === "modulepreload") {
+              preloadModule(node);
+            }
+          }
+        }
+      }
+    }).observe(document, { childList: true, subtree: true });
+  
+    function getRequestOptions(link) {
+      const options = {};
+  
+      if (link.integrity) {
+        options.integrity = link.integrity;
+      }
+  
+      if (link.referrerPolicy) {
+        options.referrerPolicy = link.referrerPolicy;
+      }
+  
+      if (link.crossOrigin === "use-credentials") {
+        options.credentials = "include";
+      } else if (link.crossOrigin === "anonymous") {
+        options.credentials = "omit";
+      } else {
+        options.credentials = "same-origin";
+      }
+  
+      return options;
+    }
+  
+    function preloadModule(link) {
+      if (link.ep) return;
+  
+      link.ep = true;
+      const requestOptions = getRequestOptions(link);
+  
+      fetch(link.href, requestOptions);
+    }
+  })();
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const titleElement = document.getElementById("title");
+    titleElement.style.color = "white";
+  });
+  
+  const audioElement = document.getElementById("audio");
+  const toggleButton = document.getElementById("toggleButton");
+  
+  toggleButton.addEventListener("click", function () {
+    if (audioElement.paused) {
+      audioElement.play();
+      toggleButton.innerHTML = '<span class="icon">🔊</span>';
+    } else {
+      audioElement.pause();
+      toggleButton.innerHTML = '<span class="icon">🔇</span>';
+    }
+  });
+  
+  window.addEventListener("beforeunload", function () {
+    audioElement.classList.add("fade-out-active");
+  });
+  
