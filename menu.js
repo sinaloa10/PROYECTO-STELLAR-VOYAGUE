@@ -1,4 +1,4 @@
-import '/PROYECT-STELLAR-VOYAGUE/dist/style_menu.css';
+import '/PROYECT-STELLAR-VOYAGUE/style_menu.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
